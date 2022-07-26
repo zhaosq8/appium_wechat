@@ -5,6 +5,9 @@
 # @File :add_members.py
 # @Software :PyCharm
 class AddMembers:
+    def __init__(self, driver):
+        self._driver = driver
+
     def manual_input_add(self):
         from appium_ipad.page.manual_input_add import ManualInputAdd
-        return ManualInputAdd()
+        return ManualInputAdd(self._driver)

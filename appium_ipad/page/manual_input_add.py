@@ -5,6 +5,9 @@
 # @File :manual_input_add.py
 # @Software :PyCharm
 class ManualInputAdd:
+    def __init__(self, driver):
+        self._driver = driver
+
     def complete_input(self):
         return self
 
@@ -18,4 +21,4 @@ class ManualInputAdd:
         return self
 
     def click_save(self):
-        return self
+        print('111')
