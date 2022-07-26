@@ -10,9 +10,6 @@ from appium_ipad.page.mian import Main
 
 
 class App:
-    def __init__(self):
-        self.driver = None
-
     def start(self):
         caps = {"platformName": "Android",
                 "deviceName": "FJRNW19B14005164",
