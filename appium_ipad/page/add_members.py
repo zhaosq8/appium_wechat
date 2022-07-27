@@ -13,5 +13,5 @@ class AddMembers:
 
     def manual_input_add(self):
         from appium_ipad.page.manual_input_add import ManualInputAdd
-        self._driver.find_element(By.XPATH, "//*[@text='手动输入添加']").click
+        self._driver.find_element(By.XPATH, "//*[@text='手动输入添加']").click()
         return ManualInputAdd(self._driver)

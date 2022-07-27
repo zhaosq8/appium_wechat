@@ -14,5 +14,5 @@ class AddressList:
         self._driver = driver
 
     def goto_add_members(self):
-        self._driver.find_element(By.XPATH, "//*[@text='添加成员']").click
+        self._driver.find_element(By.XPATH, "//*[@text='添加成员']").click()
         return AddMembers(self._driver)

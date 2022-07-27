@@ -17,5 +17,5 @@ class Main:
         pass
 
     def goto_address_list(self):
-        self._driver.find_element(By.XPATH, "//*[@text='通讯录']").click
+        self._driver.find_element(By.XPATH, "//*[@text='通讯录']").click()
         return AddressList(self._driver)
