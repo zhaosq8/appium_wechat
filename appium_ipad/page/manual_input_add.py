@@ -15,12 +15,12 @@ class ManualInputAdd:
         self._driver = driver
 
     def complete_input(self):
-        self._driver.fing.element(MobileBy.XPATH, "//*[@text = '完整输入']").click()
+        self._driver.find.element(MobileBy.XPATH, "//*[@text = '完整输入']").click()
         sleep(5)
         return self
 
     def input_name(self):
-        self._driver.fing.element(MobileBy.XPATH, "//*[@text = '姓名　']/..//*[@class = 'android.widget.EditText']")\
+        self._driver.find.element(MobileBy.XPATH, "//*[@text = '姓名　']/..//*[@class = 'android.widget.EditText']")\
             .send_keys('李2')
         return self
 
@@ -29,7 +29,7 @@ class ManualInputAdd:
         return self
 
     def input_phone(self):
-        self._driver.find.element(By.ID, "com.tencent.wework:id/hyw").send_keys('11013211011')
+        self._driver.find.element(By.ID, "com.tencent.wework:id/hyw").send_keys('10013211011')
         return self
 
     def click_save(self):

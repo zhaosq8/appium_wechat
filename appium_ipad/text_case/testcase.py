@@ -13,6 +13,6 @@ class TestCase:
         self.main = self.app.start().main()
 
     def test_addcontact(self):
-        invitpage = self.main.goto_address_list().goto_add_members().manual_input_add().input_name().input_phone()\
-            .inpout_mail().click_save()
+        invitpage = self.main.goto_address_list().goto_add_members().manual_input_add().complete_input().input_name().\
+            input_phone().inpout_mail().click_save()
         assert '成功' in invitpage.get_toast()
