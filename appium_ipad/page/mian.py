@@ -7,15 +7,16 @@
 from selenium.webdriver.common.by import By
 
 from appium_ipad.page.address_list import AddressList
+from appium_ipad.page.base_page import BasePage
 
 
-class Main:
-    def __init__(self, driver):
-        self._driver = driver
+class Main(BasePage):
+    # def __init__(self, driver):
+    #     self._driver = driver
 
     def goto_mail(self):
         pass
 
     def goto_address_list(self):
-        self._driver.find_element(By.XPATH, "//*[@text='通讯录']").click()
+        self.find(By.XPATH, "//*[@text='通讯录']").click()
         return AddressList(self._driver)

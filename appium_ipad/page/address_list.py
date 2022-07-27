@@ -7,12 +7,13 @@
 from selenium.webdriver.common.by import By
 
 from appium_ipad.page.add_members import AddMembers
+from appium_ipad.page.base_page import BasePage
 
 
-class AddressList:
-    def __init__(self, driver):
-        self._driver = driver
+class AddressList(BasePage):
+    # def __init__(self, driver):
+    #     self._driver = driver
 
     def goto_add_members(self):
-        self._driver.find_element(By.XPATH, "//*[@text='添加成员']").click()
+        self.find(By.XPATH, "//*[@text='添加成员']").click()
         return AddMembers(self._driver)

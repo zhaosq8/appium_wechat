@@ -7,15 +7,17 @@
 from appium.webdriver.common.mobileby import MobileBy
 from selenium.webdriver.common.by import By
 
+from appium_ipad.page.base_page import BasePage
 
-class AddMembers:
-    def __init__(self, driver):
-        self._driver = driver
+
+class AddMembers(BasePage):
+    # def __init__(self, driver):
+    #     self._driver = driver
 
     def manual_input_add(self):
         from appium_ipad.page.manual_input_add import ManualInputAdd
-        self._driver.find_element(By.XPATH, "//*[@text='手动输入添加']").click()
+        self.find(By.XPATH, "//*[@text='手动输入添加']").click()
         return ManualInputAdd(self._driver)
 
     def get_toast(self):
-        return self._driver.find_element(MobileBy.XPATH, "//*[@class = 'android.widget.Toast']").text
+        return self.find(MobileBy.XPATH, "//*[@class = 'android.widget.Toast']").text

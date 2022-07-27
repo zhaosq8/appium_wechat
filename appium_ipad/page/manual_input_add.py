@@ -5,31 +5,32 @@
 # @File :manual_input_add.py
 # @Software :PyCharm
 from time import sleep
-
-from appium.webdriver.common.mobileby import MobileBy
 from selenium.webdriver.common.by import By
 
+from appium_ipad.page.base_page import BasePage
 
-class ManualInputAdd:
-    def __init__(self, driver):
-        self._driver = driver
+
+class ManualInputAdd(BasePage):
+    # def __init__(self, driver):
+    #     self._driver = driver
 
     def complete_input(self):
-        self._driver.find.element(MobileBy.XPATH, "//*[@text = '完整输入']").click()
-        sleep(5)
+        self.find(By.XPATH, "//*[@text = '完整输入']").click()
+        sleep(3)
         return self
 
     def input_name(self):
-        self._driver.find.element(MobileBy.XPATH, "//*[@text = '姓名　']/..//*[@class = 'android.widget.EditText']")\
-            .send_keys('李2')
+        self.find(By.XPATH, "//*[@text = '姓名　']/..//*[@class = 'android.widget.EditText']")\
+            .send_keys('wang2')
         return self
 
     def inpout_mail(self):
-        self._driver.find.element(By.XPATH, "//*[@text = '企业邮箱　']/..//*[@class = 'android.widget.EditText']").send_keys('4346564')
+        self.find(By.XPATH, "//*[@text = '企业邮箱　']/..//*[@class = 'android.widget.EditText']").\
+            send_keys('4346564')
         return self
 
     def input_phone(self):
-        self._driver.find.element(By.ID, "com.tencent.wework:id/hyw").send_keys('10013211011')
+        self.find(By.ID, "com.tencent.wework:id/hyw").send_keys('10019890011')
         return self
 
     def click_save(self):
@@ -41,5 +42,5 @@ class ManualInputAdd:
         y1 = int(y * 0.8)
         y2 = int(y * 0.2)
         self._driver.swipe(x1, y1, x2, y2, 1000)
-        self._driver.find.element(By.ID, "com.tencent.wework:id/aw3").click()
+        self.find(By.ID, "com.tencent.wework:id/aw3").click()
         return AddMembers(self._driver)
